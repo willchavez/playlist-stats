@@ -1,0 +1,22 @@
+{
+  "name": "playlistpics",
+  "version": "1.0.0",
+  "description": "Generate a picture for your playlist!",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/willchavez/playlist.pictures.git"
+  },
+  "author": "William Chavez-Salinas",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/willchavez/playlist.pictures/issues"
+  },
+  "homepage": "https://github.com/willchavez/playlist.pictures#readme",
+  "dependencies": {
+    "express": "^4.16.2"
+  }
+}

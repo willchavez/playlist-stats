@@ -5,10 +5,11 @@ var request = require('request');
 var querystring = require('querystring');
 var cookieParser = require('cookie-parser');
 var path = require('path');
+var bodyParser = require('body-parser')
 
 var client_id = ''; // Your client id
 var client_secret = ''; // Your secret
-var redirect_uri = 'http://localhost:8888/profile'; // Your redirect uri
+var redirect_uri = 'http://localhost:8888/profile'; // Your redirect uri// Your redirect uri
 
 var generateRandomString = function(length) {
   var text = '';
@@ -39,6 +40,10 @@ if (process.env.NODE_ENV !== 'production') {
 app.listen(port);
 
 app.use(cookieParser());
+
+app.use(bodyParser.urlencoded({ extended: false }))
+
+app.use(bodyParser.json())
 
 app.get('/login', function(req, res) {
   
@@ -128,7 +133,6 @@ app.get('/playlists', function(req, res) {
 });
 
 app.get('/getPlaylists', function(req, res) {
-  
   var x = req.cookies;
   var access_token = x.access_token;
   var user_id = x.user_id;
@@ -140,6 +144,7 @@ app.get('/getPlaylists', function(req, res) {
   };
 
   request.get(options, function(error, response, body) {
+    //console.log(body);
     res.send(JSON.stringify(body));
   });
 });

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import '../assets/style.css';
 export default class Playlists extends React.Component {
   
@@ -31,14 +32,16 @@ export default class Playlists extends React.Component {
         <div>
           {this.state.playlists ?
             (this.state.playlists).map((playlist, i) => (
-              <div className="playlist-tile" key={i}>
-                <div className="inline-row">
-                  <img src={ playlist.images[0].url } height="50px" width="50px" className="playlist-image-tile" />
+              <Link to={`/playlists/${i}`} key={i}>
+                <div className="playlist-tile grow">
+                  <div className="inline-row playlist-image-tile-row">
+                    <img src={ playlist.images[0].url } height="50px" width="50px" className="playlist-image-tile" />
+                  </div>
+                  <div className="inline-row playlist-name">
+                    { playlist.name }
+                  </div>
                 </div>
-                <div className="inline-row playlist-name">
-                  { playlist.name }
-                </div>
-              </div>
+              </Link>
             )) : null
           }
         </div>

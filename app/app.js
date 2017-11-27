@@ -9,7 +9,7 @@ var bodyParser = require('body-parser')
 
 var client_id = ''; // Your client id
 var client_secret = ''; // Your secret
-var redirect_uri = 'http://localhost:8888/profile'; // Your redirect uri// Your redirect uri
+var redirect_uri = 'http://localhost:8888/profile'; // Your redirect uri
 
 var generateRandomString = function(length) {
   var text = '';

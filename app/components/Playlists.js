@@ -27,7 +27,7 @@ export default class Playlists extends React.Component {
   render() {
     return (
       <div className="playlists">
-        <div>Playlists</div>
+        <h1>Playlists</h1>
         <div>
           {this.state.playlists ?
             (this.state.playlists).map((playlist, i) => (

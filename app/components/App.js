@@ -7,7 +7,7 @@ import Main from './Main';
 export default class App extends React.Component {
   render() {
     return (
-      <div className="container helvetica">
+      <div className="container avenir">
         <Header />
         <Main />
       </div>

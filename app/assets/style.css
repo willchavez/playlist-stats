@@ -16,10 +16,34 @@
 }
 
 .playlists {
-  padding: 1rem 0 0 1rem;
-
+  padding: 0 0 0 1rem;
 }
 
 .playlist-image-tile {
   border-radius: 10px;
+}
+
+nav {
+  text-align: right;
+}
+
+nav ul li {
+  display: inline-block;
+  padding-right: 1rem;
+}
+
+nav ul li a {
+  text-decoration: none;
+}
+
+.about {
+  padding-left: 1rem;
+}
+
+.home {
+  padding-left: 1rem;
+}
+
+.account {
+  padding-left: 1rem;
 }

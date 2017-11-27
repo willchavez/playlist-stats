@@ -3,7 +3,7 @@ import React from 'react';
 export default class Home extends React.Component {
   render() {
     return (
-      <div>      
+      <div className="home">      
         <div id="login">
           <h1>playlist.pictures</h1>
           <p>Generate a pic for your playlist!</p>

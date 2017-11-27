@@ -1,4 +1,25 @@
 .playlist-tile {
-  width: 100px;
-  height: 100px;
+  width: 100%;
+  padding-bottom: 1rem;
+  position: relative;
+}
+
+.inline-row {
+  display: inline-block;
+}
+
+.playlist-name {
+  padding-left: 1rem;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.playlists {
+  padding: 1rem 0 0 1rem;
+
+}
+
+.playlist-image-tile {
+  border-radius: 10px;
 }

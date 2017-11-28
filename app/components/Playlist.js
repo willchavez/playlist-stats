@@ -32,8 +32,6 @@ export default class Playlist extends React.Component {
       }
       this.setState({
         track_ids: trackIds
-      }, function() {
-        console.log(this.state.track_ids);
       });
     });
   }
@@ -42,7 +40,7 @@ export default class Playlist extends React.Component {
     return (
       <div>
         <h1>Playlist</h1>
-        <button>
+        <button onClick={this._getTrackFeatures.bind(this)}>
           Tone Analysis
         </button>
         <div>
@@ -64,6 +62,24 @@ export default class Playlist extends React.Component {
   }
 
   _getTrackFeatures() {
-
+    let query = '';
+    for(let i = 0; i < this.state.track_ids.length; i++) {
+      if(i === this.state.track_ids.length - 1) {
+        query = query + this.state.track_ids[i];
+      } else {
+        query = query + this.state.track_ids[i] + ',';        
+      }
+    }
+    console.log(query);
+    fetch('http://localhost:8888/getTrackFeatures?ids=' + query, {
+      credentials: 'same-origin'
+    })
+    .then((response) => {
+      return response.json();      
+    })
+    .then((data) => {
+      console.log(data);
+      
+    });
   }
 }

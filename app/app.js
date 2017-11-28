@@ -172,6 +172,7 @@ app.get('/getPlaylistTracks', function(req, res) {
 
 app.get('/getTrackFeatures', function(req, res) {
   var track_ids = req.query.ids;
+  console.log(req.query);
   var x = req.cookies;
   var access_token = x.access_token;
   var user_id = x.user_id;

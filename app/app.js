@@ -166,7 +166,6 @@ app.get('/getPlaylistTracks', function(req, res) {
   };
 
   request.get(options, function(error, response, body) {
-    console.log(body);
     res.send(JSON.stringify(body));
   });
 });

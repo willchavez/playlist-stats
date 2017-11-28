@@ -21,7 +21,6 @@ export default class Playlist extends React.Component {
       return response.json();      
     })
     .then((data) => {
-      console.log(data);
       this.setState({
         tracks: data.items
       })
@@ -32,6 +31,9 @@ export default class Playlist extends React.Component {
     return (
       <div>
         <h1>Playlist</h1>
+        <button>
+          Tone Analysis
+        </button>
         <div>
           {this.state.tracks.length > 0 ?
             (this.state.tracks).map((track, i) => (

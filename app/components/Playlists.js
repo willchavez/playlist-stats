@@ -32,7 +32,7 @@ export default class Playlists extends React.Component {
         <div>
           {this.state.playlists ?
             (this.state.playlists).map((playlist, i) => (
-              <Link to={`/playlists/${i}`} key={i}>
+              <Link to={`/playlists/${playlist.id}`} key={i}>
                 <div className="playlist-tile grow">
                   <div className="inline-row playlist-image-tile-row">
                     <img src={ playlist.images[0].url } height="50px" width="50px" className="playlist-image-tile" />

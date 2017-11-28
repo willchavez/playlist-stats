@@ -140,7 +140,7 @@ app.get('/getPlaylists', function(req, res) {
   var x = req.cookies;
   var access_token = x.access_token;
   var user_id = x.user_id;
-  
+  console.log
   var options = {
     url: 'https://api.spotify.com/v1/users/' + user_id + '/playlists',
     headers: { 'Authorization': 'Bearer ' + access_token },
@@ -149,6 +149,24 @@ app.get('/getPlaylists', function(req, res) {
 
   request.get(options, function(error, response, body) {
     //console.log(body);
+    res.send(JSON.stringify(body));
+  });
+});
+
+app.get('/getPlaylistTracks', function(req, res) {
+  var playlist_id = req.query.id;
+  var x = req.cookies;
+  var access_token = x.access_token;
+  var user_id = x.user_id;
+  
+  var options = {
+    url: 'https://api.spotify.com/v1/users/' + user_id + '/playlists/' + playlist_id + '/tracks',
+    headers: { 'Authorization': 'Bearer ' + access_token },
+    json: true
+  };
+
+  request.get(options, function(error, response, body) {
+    console.log(body);
     res.send(JSON.stringify(body));
   });
 });

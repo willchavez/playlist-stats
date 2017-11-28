@@ -10,8 +10,8 @@ const Main = () => (
   <main>
     <Switch>
       <Route exact path='/' component={Home}/>
-      <Route path='/playlists' component={Playlists}/>
-      <Route path='/playlists/:number' component={Playlist}/>
+      <Route exact path='/playlists' component={Playlists}/>
+      <Route exact path='/playlists/:id' component={Playlist}/>
       <Route path='/about' component={About}/>
       <Route path='/account' component={Account}/>
     </Switch>

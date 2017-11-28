@@ -170,4 +170,21 @@ app.get('/getPlaylistTracks', function(req, res) {
   });
 });
 
+app.get('/getTrackFeatures', function(req, res) {
+  var track_ids = req.query.ids;
+  var x = req.cookies;
+  var access_token = x.access_token;
+  var user_id = x.user_id;
+  
+  var options = {
+    url: 'https://api.spotify.com/v1/audio-features?ids=' + track_ids,
+    headers: { 'Authorization': 'Bearer ' + access_token },
+    json: true
+  };
+
+  request.get(options, function(error, response, body) {
+    res.send(JSON.stringify(body));
+  });
+});
+
 console.log(`Listening at http://localhost:${port}`)

@@ -6,7 +6,8 @@ export default class Playlist extends React.Component {
     super(props);
     this.state = {
       id: '',
-      tracks: []
+      tracks: [],
+      track_ids: []
     };
   }
   componentDidMount() {
@@ -21,12 +22,22 @@ export default class Playlist extends React.Component {
       return response.json();      
     })
     .then((data) => {
+      console.log(data);
       this.setState({
         tracks: data.items
       })
+      var trackIds = [];
+      for (let i = 0; i < data.items.length; i++) {
+        trackIds.push(data.items[i].track.id)
+      }
+      this.setState({
+        track_ids: trackIds
+      }, function() {
+        console.log(this.state.track_ids);
+      });
     });
-
   }
+
   render() {
     return (
       <div>
@@ -50,5 +61,9 @@ export default class Playlist extends React.Component {
         </div>
       </div>
     );
+  }
+
+  _getTrackFeatures() {
+
   }
 }

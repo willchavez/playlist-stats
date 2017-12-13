@@ -6,9 +6,10 @@ var querystring = require('querystring');
 var cookieParser = require('cookie-parser');
 var path = require('path');
 var bodyParser = require('body-parser')
+const env = require('./env/env');
 
-var client_id = ''; // Your client id
-var client_secret = ''; // Your secret
+var client_id = env.clientId; // Your client id
+var client_secret = env.clientSecret; // Your secret
 var redirect_uri = 'http://localhost:8888/profile'; // Your redirect uri
 
 var generateRandomString = function(length) {
